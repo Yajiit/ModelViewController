@@ -3,14 +3,16 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
+// required files
 const sequelize = require('./config/connection');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
 // express app
 const app = express();
 const PORT = process.env.PORT || 3001;
-// routing
-app.use(require('./controllers')); 
 // handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+const hbs = exphbs.create({ helpers });
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 // middle
 app.use(express.urlencoded({ extended: true }));
@@ -23,15 +25,17 @@ const sessionStore = new SequelizeStore({ db: sequelize });
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    },
     resave: false,
     saveUninitialized: false,
     store: sessionStore,
   })
 );
-
+// routing
+app.use(routes); 
 // Start Server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server started on http://localhost:${PORT}`);
+  app.listen(PORT, () =>  console.log(`Server started on http://localhost:${PORT}`));
   });
-});
