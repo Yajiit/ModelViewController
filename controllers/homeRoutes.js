@@ -1,6 +1,6 @@
 // homeRoutes.js
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // must be logged in to view homepage
@@ -12,8 +12,16 @@ router.get('/', withAuth, async (req, res) => {
 
     const users = userData.map((user) => user.get({ plain: true }));
 
+    const blogData = await Blog.findAll({
+      include: User, // Include the associated user
+      order: [['id', 'DESC']], // Order blogs by ID in descending order
+    });
+
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
     res.render('homepage', {
       users,
+      blogs,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

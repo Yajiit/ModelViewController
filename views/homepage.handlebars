@@ -1,0 +1,10 @@
+    <h2>Recent blogs</h2>
+    <main class="container container-fluid mt-5">
+        {{#each blogs}}
+            <div class="blog">
+                <h2><a href="/blogs/{{id}}">{{title}}</a></h2>
+                <p>{{content}}</p>
+                <p>Posted by: {{user.username}} | Date: {{createdAt}}</p>
+            </div>
+        {{/each}}
+    </main>
