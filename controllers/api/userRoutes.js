@@ -49,20 +49,27 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// Route to create a new user
+// create new user
 router.post('/create', async (req, res) => {
-    try {
+  try {
       const newUser = await User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
+          username: req.body.username,
+          email: req.body.email,
+          password: req.body.password,
       });
-  
-      res.status(201).json(newUser);
-    } catch (err) {
+
+      // log in
+      req.session.save(() => {
+          req.session.user_id = newUser.id;
+          req.session.logged_in = true;
+
+          res.status(201).json(newUser);
+      });
+
+  } catch (err) {
       res.status(500).json(err);
-    }
-  });
+  }
+});
   
   
 module.exports = router;

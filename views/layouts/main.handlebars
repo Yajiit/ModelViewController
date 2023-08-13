@@ -13,13 +13,14 @@
     <div class = "col-lg-6 col-md-9 col-sm-11">
 
     <nav>
-          <button class="btn" id="homepage">Homepage</button> 
-    <button class="btn" id="dashboard">Dashboard</button>         
+          <button class="btn" id="homepage"><a href="/" style="color:inherit">Homepage</a></button> 
+    <button class="btn" id="dashboard"><a href="/dashboard" style="color:inherit">Dashboard</a></button>         
      {{#if logged_in}}
       <button class="btn" id="logout">logout</button>
           {{/if}}
           {{#unless logged_in}}
-      <button class="btn" id="login">Login</button>
+      <button class="btn" id="login"><a href="/login" style="color:inherit">Login</a></button>
+        <button class="btn" id="signup"><a href="/signup" style="color:inherit">Signup New Account<a/></button>
           {{/unless}}
     </nav>
     </div>
@@ -30,12 +31,8 @@
   <footer>
       
   </footer>
-  <script src="/js/main.js"></script>
   {{#if logged_in}}
    <script src="/js/logout.js"></script>
   {{/if}}
-  {{#unless logged_in}}
-   <script src="/js/loginButton.js"></script>
-  {{/unless}}
 </body>
 </html>
