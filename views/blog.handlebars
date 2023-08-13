@@ -15,7 +15,7 @@
       </div>
     {{/each}}
 
-    <form id="comment-form">
+    <form id="comment-form" data-blog-id="{{blog.id}}">
       <textarea id="comment-content" placeholder="Leave a comment"></textarea>
       <button type="submit">Submit Comment</button>
     </form>
