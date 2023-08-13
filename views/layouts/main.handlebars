@@ -7,25 +7,33 @@
     <title>blogblog</title>
 </head>
 <body>
-    <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-        <a href="/">blogblog</a>
-    </h1>
-    <div class = "col-lg-6 col-md-9 col-sm-11">
-
+<header class="display-flex justify-space-between align-center p-2">
+  <h1>
+    <a href="/">blogblog</a>
+  </h1>
+  <div class="col-lg-6 col-md-9 col-sm-11">
     <nav>
-          <button class="btn" id="homepage"><a href="/">Homepage</a></button> 
-    <button class="btn" id="dashboard"><a href="/dashboard">Dashboard</a></button>         
-     {{#if logged_in}}
+      <button class="btn" id="homepage" onclick="window.location.href='/'">
+        Homepage
+      </button>
+      <button class="btn" id="dashboard" onclick="window.location.href='/dashboard'">
+        Dashboard
+      </button>
+   {{#if logged_in}}
       <button class="btn" id="logout">logout</button>
           {{/if}}
-          {{#unless logged_in}}
-      <button class="btn" id="login"><a href="/login">Login</a></button>
-        <button class="btn" id="signup"><a href="/signup">Signup New Account<a/></button>
-          {{/unless}}
+      {{#unless logged_in}}
+        <button class="btn" id="login" onclick="window.location.href='/login'">
+          Login
+        </button>
+        <button class="btn" id="signup" onclick="window.location.href='/signup'">
+          Signup New Account
+        </button>
+      {{/unless}}
     </nav>
-    </div>
-  </header>
+  </div>
+</header>
+
    <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
