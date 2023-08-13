@@ -1,0 +1,32 @@
+<body>
+    <main>
+        <section id="new-blog-form">
+            <h2>Create a New Blog</h2>
+            <form id="create-blog-form">
+                <input type="text" id="title" placeholder="Title" required>
+                <textarea id="content" placeholder="Content" required></textarea>
+                <button type="submit">Create Blog</button>
+            </form>
+        </section>
+        <section id="existing-blogs">
+            <h2>Your Blogs</h2>
+            {{#each userBlogs}}
+                <div class="blog">
+                    <h3>{{title}}</h3>
+                    <p>{{content}}</p>
+                    <button class="edit-blog" data-blog-id="{{id}}">Edit</button>
+                    <button class="delete-blog" data-blog-id="{{id}}">Delete</button>
+                </div>
+        <div class="edit-form" id="edit-form-{{id}}" style="display: none;">
+    <form class="edit-blog-form" data-blog-id="{{id}}">
+        <input type="text" class="edit-title" value="{{title}}">
+        <textarea class="edit-content">{{content}}</textarea>
+        <button class="save-edit" type="button">Save</button>
+        <button class="cancel-edit" type="button">Cancel</button>
+    </form>
+</div>
+            {{/each}}
+        </section>
+    </main>
+    <script src="/js/dashboard.js"></script>
+</body>
