@@ -6,7 +6,7 @@ A CMD-style blog site following the MVC paradigm. It allows blogs to be posted a
 
 [Link to blogblog Page](https://cryptic-lowlands-72589-96a241753f0a.herokuapp.com/)
 
-![Webpage Screenshot](./ScreenShot.png)
+![Webpage Screenshot](./Screenshot.png)
 
 [Link to Respository Page](https://github.com/Yajiit/ModelViewController)
 
