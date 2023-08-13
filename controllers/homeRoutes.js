@@ -53,4 +53,28 @@ router.get('/signup', (req, res) => {
   });
 });
 
+router.get('/blogs/:id', withAuth, async (req, res) => {
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        { model: User, attributes: ['username'] },
+        { model: Comment, include: [User] },
+      ],
+    });
+
+    if (!blogData) {
+      res.status(404).json({ message: 'Blog not found' });
+      return;
+    }
+
+    const blog = blogData.get({ plain: true });
+
+    res.render('blog', {
+      blog,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;

@@ -1,0 +1,25 @@
+{{!-- {{> main}} --}}
+
+{{#if logged_in}}
+  <section class="blog-container">
+    <h2>{{blog.title}}</h2>
+    <p>Posted by: {{blog.user.username}}</p>
+    <p>{{blog.content}}</p>
+  </section>
+
+  <section class="comments-container">
+    <h3>Comments</h3>
+    {{#each blog.comments}}
+      <div class="comment">
+        <p>{{user.username}}: {{content}}</p>
+      </div>
+    {{/each}}
+
+    <form id="comment-form">
+      <textarea id="comment-content" placeholder="Leave a comment"></textarea>
+      <button type="submit">Submit Comment</button>
+    </form>
+  </section>
+
+  <script src="/js/comment.js"></script>
+{{/if}}
