@@ -11,7 +11,7 @@ router.post('/', withAuth, async (req, res) => {
       const newBlog = await Blog.create({
         title: req.body.title,
         content: req.body.content,
-        user_id: req.session.user_id,
+        blogger_id: req.session.user_id,
       });
   
       res.status(201).json(newBlog);
@@ -72,7 +72,7 @@ router.post('/:blog_id/comments', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       content: req.body.content,
-      user_id: req.session.commenter_id,
+      commenter_id: req.session.user_id,
       blog_id: req.params.blog_id,
       createdAt: new Date(),
     });

@@ -9,43 +9,43 @@
         "title": "Cooking Adventures",
         "content": "I tried a new recipe for pasta and it turned out delicious! Cooking is so much fun.",
         "createdAt": "2023-07-28T10:30:00Z",
-        "user_id": 2
+        "blogger_id": 2
       },
       {
         "title": "Traveling to New York",
         "content": "My recent trip to New York City was a fantastic experience. The city that never sleeps!",
         "createdAt": "2023-07-25T15:20:00Z",
-        "user_id": 3
+        "blogger_id": 3
       },
       {
         "title": "Book Review: The Great Gatsby",
         "content": "I just finished reading The Great Gatsby and it's an absolute classic. Highly recommended!",
         "createdAt": "2023-07-20T09:45:00Z",
-        "user_id": 1
+        "blogger_id": 1
       },
       {
         "title": "Gardening Adventures",
         "content": "I started a small garden in my backyard. Watching the plants grow brings so much joy.",
         "createdAt": "2023-07-15T14:10:00Z",
-        "user_id": 2
+        "blogger_id": 2
       },
       {
         "title": "Movie Night: Inception",
         "content": "I watched Inception last night and it completely blew my mind. Christopher Nolan is a genius.",
         "createdAt": "2023-07-10T18:55:00Z",
-        "user_id": 3
+        "blogger_id": 3
       },
       {
         "title": "Learning a New Language",
         "content": "I've been learning Spanish for a few months now. It's challenging but rewarding.",
         "createdAt": "2023-07-05T11:25:00Z",
-        "user_id": 1
+        "blogger_id": 1
       },
       {
         "title": "Adventures in Photography",
         "content": "Photography has become my favorite hobby. Capturing moments and memories is truly magical.",
         "createdAt": "2023-07-01T16:40:00Z",
-        "user_id": 2
+        "blogger_id": 2
       }
   ]
   
