@@ -3,24 +3,18 @@ const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// must be logged in to view homepage
-router.get('/', withAuth, async (req, res) => {
+
+// homepage accessible without login
+router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-    });
-
-    const users = userData.map((user) => user.get({ plain: true }));
-
     const blogData = await Blog.findAll({
-      include: User, // Include the associated user
-      order: [['id', 'DESC']], // Order blogs by ID in descending order
+      include: User,
+      order: [['createdAt', 'DESC']],
     });
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     res.render('homepage', {
-      users,
       blogs,
       logged_in: req.session.logged_in,
     });
@@ -54,7 +48,7 @@ router.get('/signup', (req, res) => {
 });
 
 // viewing blog pages
-router.get('/blogs/:id', withAuth, async (req, res) => {
+router.get('/blogs/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [

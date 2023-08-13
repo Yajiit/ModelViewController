@@ -8,7 +8,7 @@
 <body>
     <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      blogblog
+        <a href="/">blogblog</a>
     </h1>
     <div class = "col-lg-6 col-md-9 col-sm-11">
 
@@ -17,6 +17,9 @@
      {{#if logged_in}}
       <button class="btn" id="logout">logout</button>
           {{/if}}
+          {{#unless logged_in}}
+      <button class="btn" id="login">Login</button>
+          {{/unless}}
     </nav>
     </div>
 
@@ -28,7 +31,10 @@
   </footer>
   <script src="/js/main.js"></script>
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+   <script src="/js/logout.js"></script>
   {{/if}}
+  {{#unless logged_in}}
+   <script src="/js/loginButton.js"></script>
+  {{/unless}}
 </body>
 </html>

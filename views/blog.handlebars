@@ -1,4 +1,4 @@
-{{#if logged_in}}
+
   <section class="blog-container">
     <h2>{{blog.title}}</h2>
     <p>Posted by: {{blog.user.username}}</p>
@@ -13,6 +13,7 @@
       </div>
     {{/each}}
 
+{{#if logged_in}}
     <form id="comment-form" data-blog-id="{{blog.id}}">
       <textarea id="comment-content" placeholder="Leave a comment"></textarea>
       <button type="submit">Submit Comment</button>
