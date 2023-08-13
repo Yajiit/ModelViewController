@@ -1,27 +1,33 @@
 // dashboard.js
 document.addEventListener('DOMContentLoaded', () => {
-    const createBlogForm = document.querySelector('#create-blog-form');
-  
-    createBlogForm.addEventListener('submit', async (e) => {
+  const createBlogButton = document.getElementById('toggle-create-form');
+  const createBlogForm = document.getElementById('create-blog-form');
+
+  createBlogButton.addEventListener('click', () => {
+      createBlogForm.style.display = 'block';
+  });
+
+  createBlogForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-  
+
       const title = document.querySelector('#title').value.trim();
       const content = document.querySelector('#content').value.trim();
-  
+
       if (title && content) {
-        const response = await fetch('/api/blogs', {
-          method: 'POST',
-          body: JSON.stringify({ title, content }),
-          headers: { 'Content-Type': 'application/json' },
-        });
-  
-        if (response.ok) {
-          location.reload();
-        } else {
-          alert('Failed to create blog');
-        }
+          const response = await fetch('/api/blogs', {
+              method: 'POST',
+              body: JSON.stringify({ title, content }),
+              headers: { 'Content-Type': 'application/json' },
+          });
+
+          if (response.ok) {
+              location.reload();
+          } else {
+              alert('Failed to create blog');
+          }
       }
-    });
+  });
+
   
     const deleteButtons = document.querySelectorAll('.delete-blog');
   

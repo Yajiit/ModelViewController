@@ -1,13 +1,13 @@
 <body>
     <main>
-        <section id="new-blog-form">
-            <h2>Create a New Blog</h2>
-            <form id="create-blog-form">
-                <input type="text" id="title" placeholder="Title" required>
-                <textarea id="content" placeholder="Content" required></textarea>
-                <button type="submit">Create Blog</button>
-            </form>
-        </section>
+    <section id="new-blog-form">
+        <button id="toggle-create-form" class="btn">Create Blog</button>
+        <form id="create-blog-form" style="display: none;">
+            <input type="text" id="title" placeholder="Title" required>
+            <textarea id="content" placeholder="Content" required></textarea>
+            <button type="submit">Create Blog</button>
+        </form>
+    </section>
         <section id="existing-blogs">
             <h2>Your Blogs</h2>
             {{#each userBlogs}}
