@@ -6,10 +6,10 @@
   </section>
 
   <section class="comments-container">
-    <h3>Comments</h3>
+    <h4>Comments</h4>
     {{#each blog.comments}}
       <div class="comment">
-        <p>{{user.username}}: {{content}}</p>
+        <p>Posted on: {{createdAt}} by {{user.username}}: {{content}}</p>
       </div>
     {{/each}}
 

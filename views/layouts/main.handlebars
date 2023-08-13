@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>blogblog</title>
 </head>
 <body>
@@ -13,18 +14,18 @@
     <div class = "col-lg-6 col-md-9 col-sm-11">
 
     <nav>
-          <button class="btn" id="homepage"><a href="/" style="color:inherit">Homepage</a></button> 
-    <button class="btn" id="dashboard"><a href="/dashboard" style="color:inherit">Dashboard</a></button>         
+          <button class="btn" id="homepage"><a href="/">Homepage</a></button> 
+    <button class="btn" id="dashboard"><a href="/dashboard">Dashboard</a></button>         
      {{#if logged_in}}
       <button class="btn" id="logout">logout</button>
           {{/if}}
           {{#unless logged_in}}
-      <button class="btn" id="login"><a href="/login" style="color:inherit">Login</a></button>
-        <button class="btn" id="signup"><a href="/signup" style="color:inherit">Signup New Account<a/></button>
+      <button class="btn" id="login"><a href="/login">Login</a></button>
+        <button class="btn" id="signup"><a href="/signup">Signup New Account<a/></button>
           {{/unless}}
     </nav>
     </div>
-
+  </header>
    <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>

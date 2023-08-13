@@ -74,6 +74,7 @@ router.post('/:blog_id/comments', withAuth, async (req, res) => {
       content: req.body.content,
       user_id: req.session.user_id,
       blog_id: req.params.blog_id,
+      createdAt: new Date(),
     });
 
     res.status(201).json(newComment);
@@ -81,5 +82,4 @@ router.post('/:blog_id/comments', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 module.exports = router;

@@ -5,14 +5,14 @@
         <form id="create-blog-form" style="display: none;">
             <input type="text" id="title" placeholder="Title" required>
             <textarea id="content" placeholder="Content" required></textarea>
-            <button type="submit">Create Blog</button>
+            <button type="submit" id="create-blog">Create Blog</button>
         </form>
     </section>
         <section id="existing-blogs">
             <h2>Your Blogs</h2>
             {{#each userBlogs}}
                 <div class="blog">
-                    <h3>{{title}}</h3>
+                    <h3><a href="/blogs/{{id}}">{{title}}</a></h3>
                     <p>{{content}}</p>
                     <button class="edit-blog" data-blog-id="{{id}}">Edit</button>
                     <button class="delete-blog" data-blog-id="{{id}}">Delete</button>
