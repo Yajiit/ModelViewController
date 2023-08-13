@@ -1,72 +1,72 @@
 [
   {
     "content": "Great post!",
-    "user_id": 2,
+    "commenter_id": 2,
     "blog_id": 1
   },
   {
     "content": "Thanks for sharing.",
-    "user_id": 1,
+    "commenter_id": 1,
     "blog_id": 2
   },
     {
       "content": "The mountain views must have been stunning!",
-      "user_id": 1,
+      "commenter_id": 1,
       "blog_id": 1
     },
     {
       "content": "I love hiking! Did you encounter any wildlife?",
-      "user_id": 2,
+      "commenter_id": 2,
       "blog_id": 1
     },
     {
       "content": "The pasta recipe sounds great. Can you share it?",
-      "user_id": 3,
+      "commenter_id": 3,
       "blog_id": 2
     },
     {
       "content": "New York City is on my travel list. What were your favorite places?",
-      "user_id": 1,
+      "commenter_id": 1,
       "blog_id": 3
     },
     {
       "content": "I agree, The Great Gatsby is a timeless classic!",
-      "user_id": 4,
+      "commenter_id": 4,
       "blog_id": 4
     },
     {
       "content": "Gardening is so therapeutic. What plants did you grow?",
-      "user_id": 2,
+      "commenter_id": 2,
       "blog_id": 5
     },
     {
       "content": "Inception is mind-bending. Did you understand the ending?",
-      "user_id": 3,
+      "commenter_id": 3,
       "blog_id": 6
     },
     {
       "content": "Learning Spanish opens up new opportunities. ¡Buena suerte!",
-      "user_id": 1,
+      "commenter_id": 1,
       "blog_id": 7
     },
     {
       "content": "Photography is a wonderful way to capture memories.",
-      "user_id": 4,
+      "commenter_id": 4,
       "blog_id": 7
     },
     {
       "content": "The mountain views must have been breathtaking.",
-      "user_id": 3,
+      "commenter_id": 3,
       "blog_id": 1
     },
     {
       "content": "I'm planning a hiking trip too. Any tips?",
-      "user_id": 2,
+      "commenter_id": 2,
       "blog_id": 1
     },
     {
       "content": "The pasta recipe sounds delicious. Can you share it?",
-      "user_id": 1,
+      "commenter_id": 1,
       "blog_id": 2
     }
   ]
